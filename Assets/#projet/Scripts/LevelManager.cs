@@ -71,7 +71,15 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(Random.Range(3.0f,5.0f));
         Destroy(cubesReserve[0]);
         cubesReserve.Remove(cubesReserve[0]);
-        score -= 1;
+        if (isBlue)
+        {
+            score += 3;
+        }
+        else
+        {
+            score -= 1;
+        }
+        
         Debug.Log(score);
     }
     // Update is called once per frame
